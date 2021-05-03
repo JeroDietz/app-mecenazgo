@@ -1,0 +1,50 @@
+  <%- include('./partials/head') -%> 
+
+
+
+  <%- include('./partials/header') -%> 
+
+    <h1 style="text-align: center; margin-top: 2%;">Registrate</h1>
+  <form class="row g-3" style="margin: 4%;">
+
+    <div class="col-md-4">
+      <label for="validationServer01" class="form-label">Nombre</label>
+      <input type="text" class="form-control " id="validationServer01" placeholder="Mark" required>
+
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationServer02" class="form-label">Apellido</label>
+      <input type="text" class="form-control " id="validationServer02" placeholder="Otto" required>
+
+    </div>
+
+    <div class="col-md-4">
+        <label for="validationServer02" class="form-label">Email</label>
+        <input type="text" class="form-control " id="validationServer02" placeholder="email@ejemplo.com"  required>
+      </div>
+
+
+    <div class="col-md-6">
+      <label for="validationServer03" class="form-label" >Contraseña</label>
+      <input type="password" class="form-control " id="validationServer03" required placeholder="Escribi tu contraseña" aria-describedby="validationServer03Feedback">
+    </div>
+
+    <div class="col-md-3">
+      <label for="validationServer04" class="form-label">Yo soy:</label>
+      <select class="form-select " id="validationServer04" aria-describedby="validationServer04Feedback" required>
+        <option selected disabled value="">Elija una opción...</option>
+        <option>Emprendedor</option>
+        <option>Donante</option>
+      </select>
+    
+    </div>
+
+    
+    <div class="col-12">
+      <button class="btn btn-success" type="submit">Crear</button>
+    </div>
+  </form>
+
+  <%- include('./partials/footer') -%> 
+
