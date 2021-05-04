@@ -1,3 +1,7 @@
+/*---------------------
+    INDEX
+-----------------------*/
+
 .card{
   width: 45%;
 }
@@ -13,11 +17,28 @@
   justify-content: center;
 }
 
+/*---------------------
+    LOGIN
+-----------------------*/
+
+.fw-bold{
+  text-align: center;
+}
+
+/*---------------------
+    CREATE PROYECT
+-----------------------*/
+
 .create{
   height: 25vh;
 }
+
+/*---------------------
+    FOOTER
+-----------------------*/
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
   color: #fff;
   background-color: #198754;
 }
+
