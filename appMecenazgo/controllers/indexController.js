@@ -1,23 +1,49 @@
 const db = require('../database/models/index.js')
 
 const indexController = {
+    
     home:
         function (req, res) {
-            res.render('index');
+            db.Project.findAll()
+                .then(function (projects) {
+                    return res.render('index', { projects });
+                })
+
         },
+    createProyect:
+        function (req, res) {
+            res.render('createProyect');
+        },
+
+    create:
+        function (req, res) {
+            db.Project.create({
+                title: req.body.titulo,
+                sub_title: req.body.subTitulo,
+                description: req.body.descripcion,
+                user_id: 1,
+            }).then(function(resultado){
+                res.redirect('/')
+            })
+        },
+    updateProject: 
+        function(req,res){
+            db.Project.findAll()
+            .then(function(projects){
+                return res.render('editarProyect', {projects})
+            })
+            
+        },
+
 
     login:
         function (req, res) {
             res.render('login');
         },
 
-    register: 
+    register:
         function (req, res) {
             res.render('register');
-        },
-    createProyect: 
-        function (req, res) {
-            res.render('createProyect');
         },
 }
 

@@ -2,15 +2,19 @@ module.exports= function(sequelize, dataTypes){
     let alias = 'Project';
     let cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             AutoIncrement: true,
-            PrimaryKey: true
+            primaryKey: true
         },
         user_id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             NotNull: true,
         },
         title: {
+            type: dataTypes.STRING(100),
+            NotNull: true,
+        },
+        sub_title: {
             type: dataTypes.STRING(100),
             NotNull: true,
         },

@@ -7,87 +7,45 @@
 <div class="contenedor-mio">
 
 
-  <div class="d-flex flex-wrap" style="display: flex;">
+  <div class="d-flex flex-wrap" style="justify-content: center;">
 
     <div class="otro-contenedor-cards">
 
-      <div class="card" style="text-align: center;">
+      <% for (let i = 0; i < projects.length; i++) { %>
+        <div class="card" style="text-align: center;">
+        
+        
         <div class="card-body">
-          <h5 class="card-title">NOMBRE DEL PROYECTO</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Un sub del proyecto</h6>
-          <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus tempora
-            ullam, hic doloremque delectus mollitia temporibus similique maxime molestias voluptates beatae, quos autem
-            iusto tempore sunt? Velit, dignissimos quo.
-          </p>
-          <a href="#" class="card-link"><button type="button" class="btn btn-success">Aportar al proyecto</button></a>
-        </div>
-      </div>
+          <h5 class="card-title"> <%= projects[i].title %>  </h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= projects[i].sub_title %> </h6>
+          <p class="card-text"> <%= projects[i].description %>  </p>
 
-      <div class="card" style="text-align: center;">
-        <div class="card-body">
-          <h5 class="card-title">NOMBRE DEL PROYECTO</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Un sub del proyecto</h6>
-          <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus tempora
-            ullam, hic doloremque delectus mollitia temporibus similique maxime molestias voluptates beatae, quos autem
-            iusto tempore sunt? Velit, dignissimos quo.
-          </p>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+          </div>
           <a href="#" class="card-link"><button type="button" class="btn btn-success">Aportar al proyecto</button></a>
-        </div>
-      </div>
+          
+          <a href="http://localhost:3000/updateProyect">
+            <button type="button" class="btn btn-outline-success">
+              <i class="bi bi-pencil-square"></i>
+            </button></a>
 
-      <div class="card" style="text-align: center;">
-        <div class="card-body">
-          <h5 class="card-title">NOMBRE DEL PROYECTO</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Un sub del proyecto</h6>
-          <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus tempora
-            ullam, hic doloremque delectus mollitia temporibus similique maxime molestias voluptates beatae, quos autem
-            iusto tempore sunt? Velit, dignissimos quo.
-          </p>
-          <a href="#" class="card-link"><button type="button" class="btn btn-success">Aportar al proyecto</button></a>
+          <a href="">
+            <button type="button" class="btn btn-outline-danger">
+              <i class="bi bi-trash"></i>
+            </button></a>
+          
+          
+          
         </div>
-      </div>
-
-      <div class="card" style="text-align: center;">
-        <div class="card-body">
-          <h5 class="card-title">NOMBRE DEL PROYECTO</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Un sub del proyecto</h6>
-          <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus tempora
-            ullam, hic doloremque delectus mollitia temporibus similique maxime molestias voluptates beatae, quos autem
-            iusto tempore sunt? Velit, dignissimos quo.
-          </p>
-          <a href="#" class="card-link"><button type="button" class="btn btn-success">Aportar al proyecto</button></a>
-        </div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <div class="card-body">
-          <h5 class="card-title">NOMBRE DEL PROYECTO</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Un sub del proyecto</h6>
-          <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus tempora
-            ullam, hic doloremque delectus mollitia temporibus similique maxime molestias voluptates beatae, quos autem
-            iusto tempore sunt? Velit, dignissimos quo.
-          </p>
-          <a href="#" class="card-link"><button type="button" class="btn btn-success">Aportar al proyecto</button></a>
-        </div>
-      </div>
-
-      <div class="card" style="text-align: center;">
-        <div class="card-body">
-          <h5 class="card-title">NOMBRE DEL PROYECTO</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Un sub del proyecto</h6>
-          <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus tempora
-            ullam, hic doloremque delectus mollitia temporibus similique maxime molestias voluptates beatae, quos autem
-            iusto tempore sunt? Velit, dignissimos quo.
-          </p>
-          <a href="#" class="card-link"><button type="button" class="btn btn-success">Aportar al proyecto</button>
-          </a>
-        </div>
+        
 
       </div>
+      <% } %>
 
     </div>
 
   </div>
-
 </div>
   <%- include('./partials/footer') -%> 
 
