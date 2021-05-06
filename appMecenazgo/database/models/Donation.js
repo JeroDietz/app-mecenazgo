@@ -24,4 +24,7 @@ module.exports= function(sequelize, dataTypes){
         TableName: 'donations',
         underscored: true,
     }
+
+    const Donation = sequelize.define(alias, cols, config);
+    return Donation;
 }

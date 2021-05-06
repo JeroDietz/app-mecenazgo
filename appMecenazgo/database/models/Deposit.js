@@ -22,4 +22,7 @@ module.exports= function(sequelize, dataTypes){
         timestamps: true,
         underscored: true
     }
+
+    const Deposit = sequelize.define(alias, cols, config);
+    return Deposit;
 }

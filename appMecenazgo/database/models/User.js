@@ -50,4 +50,7 @@ module.exports= function(sequelize, dataTypes){
         underscored: true,
         paranoid: true,
     };
+
+    const User = sequelize.define(alias, cols, config);
+    return User;
 }

@@ -34,4 +34,7 @@ module.exports= function(sequelize, dataTypes){
         underscored: true,
         paranoid: true
     };
+
+    const Project = sequelize.define(alias, cols, config);
+    return Project;
 }
