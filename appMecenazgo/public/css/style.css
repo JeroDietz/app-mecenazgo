@@ -21,6 +21,10 @@
   margin-bottom: 4%;
 }
 
+a{
+  text-decoration: none;
+}
+
 /*---------------------
     LOGIN
 -----------------------*/

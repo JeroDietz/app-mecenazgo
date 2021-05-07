@@ -10,6 +10,14 @@ const indexController = {
                 })
 
         },
+    
+    detail:
+        function(req,res){
+            db.Project.findAll()
+                .then(function(projects){
+                    return res.render('detailProyect', {projects})
+                })
+        },
     createProyect:
         function (req, res) {
             res.render('createProyect');

@@ -1,9 +1,9 @@
-<%- include('./partials/head.ejs', {Titulo : 'Mecenazgo | Home'}) -%> 
+<%- include('./partials/head.ejs', {Titulo : 'Mecenazgo | Detalle Producto'}) -%> 
 
 <body>
 
   <%- include('./partials/header') -%> 
-  <%- console.log(projects) %>
+
 <div class="contenedor-mio">
 
 
@@ -11,15 +11,13 @@
 
     <div class="otro-contenedor-cards">
 
-      <% for (let i = 0; i < projects.length; i++) { %>
-        <a href="http://localhost:3000/detailProyect/<%=  projects.id %> ">
         <div class="card" style="text-align: center;">
         
         
         <div class="card-body">
-          <h5 class="card-title"> <%= projects[i].title %>  </h5>
-          <h6 class="card-subtitle mb-2 text-muted"><%= projects[i].sub_title %> </h6>
-          <p class="card-text"> <%= projects[i].description %>  </p>
+          <h5 class="card-title"> <%=projects[1].title%>   </h5>
+          <h6 class="card-subtitle mb-2 text-muted"> <%=projects[1].sub_title%> </h6>
+          <p class="card-text">  <%=projects[1].description%> </p>
 
           <div class="progress">
             <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
@@ -42,8 +40,7 @@
         
 
       </div>
-    </a>
-      <% } %>
+
 
     </div>
 

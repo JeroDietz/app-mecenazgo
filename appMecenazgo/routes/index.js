@@ -4,6 +4,7 @@ const indexController = require('../controllers/indexController');
 
 /* GET home page. */
 router.get('/', indexController.home);
+router.get('/detailProyect/:id', indexController.detail);
 
 router.get('/login', indexController.login);
 
