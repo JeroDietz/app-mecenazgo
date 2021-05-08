@@ -13,7 +13,7 @@ const indexController = {
     
     detail:
         function(req,res){
-            db.Project.findAll()
+            db.Project.findByPk(req.params.id)
                 .then(function(projects){
                     return res.render('detailProyect', {projects})
                 })
