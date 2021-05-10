@@ -8,7 +8,7 @@
             
             
             
-                <form action="/createProyect" method="POST">
+                <form action="/project/updateProyect/<%= projects.id %> " method="POST">
 
 
                 <div class="mb-3" style="margin: 0 4%">
@@ -18,13 +18,13 @@
 
                 <div class="mb-3" style="margin: 0 4%">
                     <label  class="form-label">Nombre de el emprendedor</label>
-                    <input type="text" name="subTitulo" class="form-control" id="formGroupExampleInput" placeholder="Jero Dietz" >
+                    <input type="text" name="subTitulo" class="form-control" id="formGroupExampleInput" placeholder="Jero Dietz" value="<%= projects.sub_title %>" >
                 </div>
 
                 <div class="mb-3" style="margin: 0 4%">
                     <label  class="form-label">Descripción</label>
                     <input type="text" name="descripcion" class="form-control create" id="formGroupExampleInput"
-                        placeholder="Describa su proyecto">
+                        placeholder="Describa su proyecto" value="<%= projects.description %>">
                 </div>
 
                 <div class="d-grid gap-2 col-6 mx-auto">

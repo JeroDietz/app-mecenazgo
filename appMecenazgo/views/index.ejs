@@ -3,7 +3,6 @@
 <body>
 
   <%- include('./partials/header') -%> 
-  <%- console.log(projects) %>
 <div class="contenedor-mio">
 
 
@@ -12,12 +11,12 @@
     <div class="otro-contenedor-cards">
 
       <% for (let i = 0; i < projects.length; i++) { %>
-        <a href="http://localhost:3000/detailProyect/ <%=  projects[i].id %> ">
+        
         <div class="card" style="text-align: center;">
         
         
         <div class="card-body">
-          <h5 class="card-title"> <%= projects[i].title %>  </h5>
+          <a href="http://localhost:3000/project/detailProyect/ <%= projects[i].id %> "><h5 class="card-title"> <%= projects[i].title %>  </h5></a>
           <h6 class="card-subtitle mb-2 text-muted"><%= projects[i].sub_title %> </h6>
           <p class="card-text"> <%= projects[i].description %>  </p>
 
@@ -26,15 +25,17 @@
           </div>
           <a href="#" class="card-link"><button type="button" class="btn btn-success">Aportar al proyecto</button></a>
           
-          <a href="http://localhost:3000/updateProyect">
+          <a href="http://localhost:3000/project/updateProyect/<%=projects[i].id%>">
             <button type="button" class="btn btn-outline-success">
               <i class="bi bi-pencil-square"></i>
-            </button></a>
+            </button>
+          </a>
 
-          <a href="">
-            <button type="button" class="btn btn-outline-danger">
+          <a href="http://localhost:3000/project/deleteProyect/<%=projects[i].id%>">
+            <button type="submit" class="btn btn-outline-danger">
               <i class="bi bi-trash"></i>
-            </button></a>
+            </button>
+          </a>
           
           
           
@@ -42,7 +43,7 @@
         
 
       </div>
-    </a>
+    
       <% } %>
 
     </div>

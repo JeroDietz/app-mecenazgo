@@ -1,17 +1,6 @@
 const db = require('../database/models/index.js')
 
-const indexController = {
-    
-    home:
-        function (req, res) {
-            db.Project.findAll()
-                .then(function (projects) {
-                    return res.render('index', { projects });
-                })
-
-        },
-    
-/*
+const projectController = {
 
     detail:
         function(req,res){
@@ -57,17 +46,13 @@ const indexController = {
             })
            
         },
-    login:
-        function (req, res) {
-            res.render('login');
-        },
-
-    register:
-        function (req, res) {
-            res.render('register');
-        },
-
-        */
+    delete: function(req,res){
+        db.Project.destroy(
+            {where:{id : req.params.id}}
+        ).then(function(){
+            return res.redirect('/');
+        })
+    }
 }
 
-module.exports = indexController;
+module.exports = projectController
