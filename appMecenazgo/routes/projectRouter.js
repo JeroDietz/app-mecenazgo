@@ -10,6 +10,8 @@ router.post('/createProyect', projectController.create);
 router.get('/updateProyect/:id', projectController.updateProject);
 router.post('/updateProyect/:id', projectController.update);
 
-router.post('/deleteProyect', projectController.delete);
+router.post('/deleteProyect/:id', projectController.delete);
+
+router.get('/allProyect', projectController.search)
 
 module.exports = router;

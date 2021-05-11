@@ -10,20 +10,24 @@
       <li class="nav-item">
         <a class="nav-link" href="http://localhost:3000/users/register">REGISTRARSE</a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:3000/project/createProyect">AÑADIR PROYECTO</a>
+      </li>
     </ul>
     </div>
 
     <nav class="navbar navbar-light bg-light">
 
-      <form class="form-inline" style="display: flex;">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <form method="GET" action="/project/allProyect" class="form-inline" style="display: flex;">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
 
       
     </nav>
-    <a href=""><button type="button" class="btn btn-success">
-      <i class="bi bi-person-circle"></i>
+    <a href="http://localhost:3000/users/perfil"><button type="button" class="btn btn-success">
+      <i class="bi bi-person-circle">Perfil</i>
     </button>
   </a>
   </nav>

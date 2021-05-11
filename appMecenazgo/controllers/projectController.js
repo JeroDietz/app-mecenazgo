@@ -1,4 +1,5 @@
 const db = require('../database/models/index.js')
+const { Op } = require("sequelize");
 
 const projectController = {
 
@@ -52,7 +53,19 @@ const projectController = {
         ).then(function(){
             return res.redirect('/');
         })
-    }
+        },
+        search: function (req, res) {
+            db.Project.findAll(
+                {where: {
+                    title: {[Op.like]:"%"+ req.query.search +"%"}    
+                    },
+                }).then(function (projects) {
+                    
+                    return res.render("allProyect", { projects })
+                }).catch(function(e){
+                    console.log(e)
+                })
+        },
 }
 
 module.exports = projectController
