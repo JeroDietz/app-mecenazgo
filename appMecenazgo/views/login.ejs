@@ -9,12 +9,12 @@
   <form method="POST" class="row g-3" style="margin: 5%;">
     <div class="col-auto">
       <label for="staticEmail2" class="visually-hidden"></label>
-      <input type="text" class="form-control-plaintext" id="staticEmail2" placeholder="email@ejemplo.com" name="name">
+      <input type="email" class="form-control-plaintext" id="staticEmail2" placeholder="email@ejemplo.com" name="name" required>
     </div>
 
     <div class="col-auto">
       <label for="inputPassword2" class="visually-hidden"></label>
-      <input type="password" class="form-control" id="inputPassword2" placeholder="Contraseña">
+      <input type="password" class="form-control" id="inputPassword2" placeholder="Contraseña" name="contraseña" required>
     </div>
     
     <div class="col-auto">
@@ -22,5 +22,6 @@
     </div>
     <p class="fw-bold">¿No estas registrado? Hace click <a href="http://localhost:3000/users/register">aquí</a> !</p>
   </form>
+  
   <%- include('./partials/footer') -%> 
 

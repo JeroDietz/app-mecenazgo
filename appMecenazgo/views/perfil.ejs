@@ -1,7 +1,43 @@
 <%- include('./partials/head.ejs', {Titulo : 'Mecenazgo | Mi Perfil' }) -%>
 
 <%- include('./partials/header') -%>
-              
+
+
+<div class="card" style="text-align: center; margin-left: 25%;">
+
+    <div class="card-body">
+        <h3 class="card-title">Mi perfil</h3>
+        <form action="">
+            <div class="col-md-4">
+                <label for="validationServer01" class="form-label">Nombre</label>
+                <input type="text" class="form-control " id="validationServer01" placeholder="Mark" required name='nombre'>
+          
+              </div>
+          
+              <div class="col-md-4">
+                <label for="validationServer02" class="form-label">Apellido</label>
+                <input type="text" class="form-control " id="validationServer02" placeholder="Otto" required name='apellido'>
+          
+              </div>
+          
+              <div class="col-md-4">
+                  <label for="validationServer02" class="form-label">Email</label>
+                  <input type="text" class="form-control " id="validationServer02" placeholder="email@ejemplo.com"  required
+                  name='email'>
+                </div>
+            
+        </form>
+
+
+      <p class="card-text">Estos son los proyectos a los que aportaste:</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><a href=""> Mecenazgo</a></li>
+      <li class="list-group-item"><a href=""> TODO FULBO </a></li>
+      <li class="list-group-item"><a href=""> Todo autos </a></li>
+    </ul>
+</div>
+
 
 
 <%- include('./partials/footer') -%>

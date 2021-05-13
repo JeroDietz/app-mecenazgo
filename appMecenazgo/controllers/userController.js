@@ -31,21 +31,38 @@ const userController = {
         function(req,res){
             res.render('perfil')
         },
-    checkUser: 
+    chequeoUser: 
         function(req,res){
-//ESTO NO ESTA FUNCIONANDO TENGO QUE SEGUIR POR ACA !!!!!!!!!
+            
+//
 
-            db.User.findOne(
-                {where: {name : req.body.name}}
-            )
+            db.User.findOne({
+                "name": req.body.name}
+            ).then(function(users){
+                const deLaVista = toString(req.body.contraseña);
+                console.log(deLaVista)
+                if(users.name == req.body.name && bcrypt.compareSync(deLaVista, users.password)){
+                    console.log('esta funcando')
+                    return res.redirect('/')
+                }else{
+                    res.render('login')
+                }
+
+                    
+            })
+
+
+           /* db.User.findAll()
             .then(function(users){
                 for(let i = 0; i < users.length; i++){
                     if(users[i].name == req.body.name){
-                        return res.send('Usuario encontrado')
+                        return res.redirect('/')
                     }
-                    return res.send('usuario no encontrado')
-                }
-            })
+                    
+                };
+                return res.send('Usuario NO encontrado');
+
+            })*/
         },
 
 }

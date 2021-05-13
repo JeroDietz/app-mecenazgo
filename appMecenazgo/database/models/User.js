@@ -9,6 +9,7 @@ module.exports= function(sequelize, dataTypes){
         name: {
             type: dataTypes.STRING(100),
             NotNull: true,
+            unique: true,
         },
         first_name: {
             type: dataTypes.STRING(100),
@@ -32,6 +33,10 @@ module.exports= function(sequelize, dataTypes){
         },
         amount: {
             type: dataTypes.DECIMAL,
+            NotNull: true,
+        },
+        type: {
+            type: dataTypes.STRING(100),
             NotNull: true,
         },
         deleted_at: {

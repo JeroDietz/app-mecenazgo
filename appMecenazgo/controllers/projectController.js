@@ -54,7 +54,7 @@ const projectController = {
             return res.redirect('/');
         })
         },
-        search: function (req, res) {
+    search: function (req, res) {
             db.Project.findAll(
                 {where: {
                     title: {[Op.like]:"%"+ req.query.search +"%"}    
