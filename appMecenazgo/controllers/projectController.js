@@ -38,7 +38,7 @@ const projectController = {
         function(req,res){db.Project.update(
             {
             title: req.body.titulo,
-            sub_title: req.body.subTitle,
+            sub_title: req.body.subTitulo,
             description: req.body.descripcion},
             {where:{
                 id: req.params.id}

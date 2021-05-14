@@ -41,7 +41,7 @@ const userController = {
                     }
             }
             ).then(function(users){         
-                if(users.name == req.body.name && bcrypt.hashSync(toString(req.body.contraseña))){
+                if(users.name == req.body.name && bcrypt.compare(toString(req.body.contraseña), users.password)){
                    req.session.userSession = {
                         id: users.id,
                         name: users.name,
@@ -54,6 +54,7 @@ const userController = {
                     console.log(req.session.userSession);       
                     return res.redirect('/');
                 }
+
                 return res.render('login');
             })
 
