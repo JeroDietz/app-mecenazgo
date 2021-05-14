@@ -6,7 +6,7 @@
 
   <h1 style="text-align: center;">Iniciar sesión</h1>
 
-  <form method="POST" class="row g-3" style="margin: 5%;">
+  <form id="login" method="POST" class="row g-3" style="margin: 5%;">
     <div class="col-auto">
       <label for="staticEmail2" class="visually-hidden"></label>
       <input type="email" class="form-control-plaintext" id="staticEmail2" placeholder="email@ejemplo.com" name="name" required>
@@ -23,5 +23,6 @@
     <p class="fw-bold">¿No estas registrado? Hace click <a href="http://localhost:3000/users/register">aquí</a> !</p>
   </form>
   
+  <script src="/js/scriptLogin.js"></script>
   <%- include('./partials/footer') -%> 
 

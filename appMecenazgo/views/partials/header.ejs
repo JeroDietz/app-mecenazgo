@@ -1,33 +1,48 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0 4%; justify-content: space-around;">
 
-    <a class="navbar-brand" href="http://localhost:3000/">Mecenazgo</a>
-    <ul class="navbar-nav">
+  <a class="navbar-brand" href="http://localhost:3000/">Mecenazgo</a>
 
-      <li class="nav-item ">
-        <a class="nav-link" href="http://localhost:3000/users/login">INGRESAR<span class="sr-only"></span></a>
+  <nav class="navbar navbar-light bg-light">
+
+    <form method="GET" action="/project/allProyect" class="form-inline" style="display: flex;">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+  </nav>
+
+  <ul class="navbar-nav">
+
+    <% if(typeof userSession=='undefined' ){ %>
+      <a class="nav-link" href="http://localhost:3000/users/login">INGRESAR<span class="sr-only"></span></a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="http://localhost:3000/users/register">REGISTRARSE</a>
       </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="http://localhost:3000/project/createProyect">AÑADIR PROYECTO</a>
-      </li>
-    </ul>
-    </div>
-
-    <nav class="navbar navbar-light bg-light">
-
-      <form method="GET" action="/project/allProyect" class="form-inline" style="display: flex;">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-
       
-    </nav>
-    <a href="http://localhost:3000/users/perfil"><button type="button" class="btn btn-success">
-      <i class="bi bi-person-circle">Perfil</i>
-    </button>
-  </a>
-  </nav>
+      <% }else if(userSession.type=='Emprendedor' ) { %>
+
+        <li class="nav-item"><a class="nav-link" href="http://localhost:3000/users/perfil">Bienvenidx <%= userSession.first_name %> </a> </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/project/createProyect">AÑADIR PROYECTO</a>
+        </li>
+
+        <a href="/users/logout" title="Cerrar Sesión">
+          <button type="button" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i></button>
+        </a>
+        <% }else if(userSession.type == 'Donante'){ %>
+
+          <li class="nav-item"><a class="nav-link" href="http://localhost:3000/users/perfil">Bienvenidx <%= userSession.first_name %> </a> </li>
+
+          <a href="/users/logout" title="Cerrar Sesión">
+            <button type="button" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i></button>
+          </a>
+        <% }  %>
+
+
+  </ul>
+  </div>
+
+</nav>

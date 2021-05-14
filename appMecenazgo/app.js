@@ -3,11 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
 
 var indexRouter = require('./routes/index.js');
 var projectRouter = require('./routes/projectRouter.js')
 var userRouter = require('./routes/userRouter.js')
-//var middlewareDeApp = require('./middlewares/middlewareAp');
+var middlewareLogin = require('./middlewares/login')
+
 
 var app = express();
 
@@ -17,11 +19,12 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use(session({secret: 'mecenazgo app', resave: true, saveUninitialized: true }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, './public')));
-//app.use(middlewareDeApp);
+app.use(middlewareLogin);
 
 
 app.use('/', indexRouter);

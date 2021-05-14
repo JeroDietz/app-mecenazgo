@@ -10,22 +10,27 @@
         <form action="">
             <div class="col-md-4">
                 <label for="validationServer01" class="form-label">Nombre</label>
-                <input type="text" class="form-control " id="validationServer01" placeholder="Mark" required name='nombre'>
+                <input type="text" class="form-control " id="validationServer01" value="<%= userSession.first_name %> " readonly name='nombre'>
           
               </div>
           
               <div class="col-md-4">
                 <label for="validationServer02" class="form-label">Apellido</label>
-                <input type="text" class="form-control " id="validationServer02" placeholder="Otto" required name='apellido'>
+                <input type="text" class="form-control " id="validationServer02" value="<%= userSession.last_name  %> " readonly name='apellido'>
           
               </div>
           
               <div class="col-md-4">
                   <label for="validationServer02" class="form-label">Email</label>
-                  <input type="text" class="form-control " id="validationServer02" placeholder="email@ejemplo.com"  required
+                  <input type="email" class="form-control " id="validationServer02" value="<%= userSession.name %> " readonly 
                   name='email'>
                 </div>
             
+                <div class="col-md-4">
+                  <label for="validationServer02" class="form-label">Tipo de cliente</label>
+                  <input type="text" class="form-control " id="validationServer02" value="<%= userSession.type %> " readonly 
+                  name='email'>
+                </div>
         </form>
 
 
